@@ -1,34 +1,5 @@
-# pokemon-vue-3
+# usePokedex
 
-## Project setup
-```
-yarn install
-```
+Pokedex made using Vue 3 Composition API & pokeapi
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Run your unit tests
-```
-yarn test:unit
-```
-
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+![Pokedex](https://github.com/dinogit/usePokedex/blob/master/public/pokedex.gif?raw=true 'Title')
