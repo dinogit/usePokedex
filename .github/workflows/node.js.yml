@@ -27,4 +27,3 @@ jobs:
     - run: rm -rf node_modules && yarn install --frozen-lockfile
     - run: yarn build --if-present
     - run: yarn test:unit
-    - run: yarn test:e2e
