@@ -1,5 +1,5 @@
 /*jshint esversion: 6 */
-import axios from 'axios';
+import axios from "axios";
 // import Raven from "raven-js";
 // import store from "../store/index";
 
@@ -9,7 +9,7 @@ import axios from 'axios';
  */
 const getClient = (baseURL = null) => {
   const options = {
-    baseURL: baseURL,
+    baseURL: baseURL
   };
 
   // if (store.getters["users/isAuthenticated"]) {
@@ -19,16 +19,16 @@ const getClient = (baseURL = null) => {
   // }
 
   options.headers = {
-    'Content-Type': 'application/json;odata=verbose',
-    Accept: 'application/json; odata=verbose',
+    "Content-Type": "application/json;odata=verbose",
+    Accept: "application/json; odata=verbose"
   };
 
   const client = axios.create(options);
 
   // Add a request interceptor
   client.interceptors.request.use(
-    (requestConfig) => requestConfig,
-    (requestError) => {
+    requestConfig => requestConfig,
+    requestError => {
       //Raven.captureException(requestError);
 
       return Promise.reject(requestError);
@@ -37,9 +37,9 @@ const getClient = (baseURL = null) => {
 
   // Add a response interceptor
   client.interceptors.response.use(
-    (response) => response,
-    (error) => {
-      console.log('error', error);
+    response => response,
+    error => {
+      console.log("error", error);
       if (error.response.status >= 500) {
         //Raven.captureException(error);
       }
@@ -59,50 +59,50 @@ class ApiClient {
   get(url, conf = {}) {
     return this.client
       .get(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   }
 
   delete(url, conf = {}) {
     return this.client
       .delete(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   }
 
   head(url, conf = {}) {
     return this.client
       .head(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   }
 
   options(url, conf = {}) {
     return this.client
       .options(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   }
 
   post(url, data = {}, conf = {}) {
     return this.client
       .post(url, data, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   }
 
   put(url, data = {}, conf = {}) {
     return this.client
       .put(url, data, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   }
 
   patch(url, data = {}, conf = {}) {
     return this.client
       .patch(url, data, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   }
 }
 
@@ -116,49 +116,49 @@ export default {
   get(url, conf = {}) {
     return getClient()
       .get(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   },
 
   delete(url, conf = {}) {
     return getClient()
       .delete(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   },
 
   head(url, conf = {}) {
     return getClient()
       .head(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   },
 
   options(url, conf = {}) {
     return getClient()
       .options(url, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   },
 
   post(url, data = {}, conf = {}) {
     return getClient()
       .post(url, data, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   },
 
   put(url, data = {}, conf = {}) {
     return getClient()
       .put(url, data, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
   },
 
   patch(url, data = {}, conf = {}) {
     return getClient()
       .patch(url, data, conf)
-      .then((response) => Promise.resolve(response))
-      .catch((error) => Promise.reject(error));
-  },
+      .then(response => Promise.resolve(response))
+      .catch(error => Promise.reject(error));
+  }
 };

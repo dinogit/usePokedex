@@ -1,7 +1,8 @@
 {
-  "name": "pokemon-vue-3",
+  "name": "usepokedex",
   "version": "0.1.0",
   "private": true,
+  "license": "UNLICENSED",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
@@ -37,5 +38,20 @@
     "sass-loader": "^8.0.2",
     "typescript": "~3.9.3",
     "vue-jest": "^5.0.0-0"
-  }
+  },
+  "description": "Pokedex made using Vue 3 Composition API & pokeapi",
+  "main": ".eslintrc.js",
+  "directories": {
+    "test": "tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dinogit/usePokedex.git"
+  },
+  "keywords": [],
+  "author": "Dino Kljuco",
+  "bugs": {
+    "url": "https://github.com/dinogit/usePokedex/issues"
+  },
+  "homepage": "https://github.com/dinogit/usePokedex#readme"
 }

@@ -1,34 +1,34 @@
 const generations = [
   {
-    name: 'Kanto',
+    name: "Kanto",
     from: 1,
-    to: 151,
+    to: 151
   },
   {
-    name: 'Johto',
+    name: "Johto",
     from: 152,
-    to: 251,
+    to: 251
   },
   {
-    name: 'Hoenn',
+    name: "Hoenn",
     from: 252,
-    to: 386,
+    to: 386
   },
   {
-    name: 'Sinnoh',
+    name: "Sinnoh",
     from: 387,
-    to: 483,
+    to: 483
   },
   {
-    name: 'Unova',
+    name: "Unova",
     from: 494,
-    to: 649,
-  },
+    to: 649
+  }
 ];
 
-const getGeneration = (id) => {
+const getGeneration = id => {
   return generations.filter(
-    (generation) => generation.from <= id && generation.to >= id
+    generation => generation.from <= id && generation.to >= id
   );
 };
 

@@ -11,14 +11,14 @@
 <script>
 // @ is an alias to /src
 
-import Card from '@/components/Card';
+import Card from "@/components/Card";
 
-import usePokemonsRepository from '@/composables/usePokemonsRepository';
+import usePokemonsRepository from "@/composables/usePokemonsRepository";
 
-import { onMounted, onUnmounted } from 'vue';
+import { onMounted, onUnmounted } from "vue";
 
 export default {
-  name: 'Home',
+  name: "Home",
   components: { Card },
   setup() {
     const { pokemons, getPokemons } = usePokemonsRepository();
@@ -28,11 +28,11 @@ export default {
 
     onMounted(() => {
       getPokemons(page, limit);
-      window.addEventListener('scroll', handleScroll);
+      window.addEventListener("scroll", handleScroll);
     });
 
     onUnmounted(() => {
-      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener("scroll", handleScroll);
     });
 
     const handleScroll = () => {
@@ -45,9 +45,9 @@ export default {
     };
 
     return {
-      pokemons,
+      pokemons
     };
-  },
+  }
 };
 </script>
 

@@ -1,6 +1,6 @@
-import API from '@/api';
+import API from "@/api";
 
-import { ref } from 'vue';
+import { ref } from "vue";
 
 export default function usePokemonsRepository() {
   const pokemons = ref([]);
@@ -11,13 +11,13 @@ export default function usePokemonsRepository() {
     }
   };
 
-  const getPokemon = async (id) => {
+  const getPokemon = async id => {
     const pokemon = await API.Pokemons.get(id);
     pokemons.value.push(pokemon.data);
   };
 
   return {
     pokemons,
-    getPokemons,
+    getPokemons
   };
 }
